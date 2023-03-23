@@ -1,6 +1,8 @@
 # Tenemos que ver donde en si se alimenta la ruta y las lineas 
 # Ver como funciona bien bien el codigo 
+# "C:/Users/Luisa/Documents/Proyectos 2023/Doc.txt"
 #------------------------------------------------------------------------------
+
 ruta = "C:/Users/Luisa/Documents/Proyectos 2023/Doc3.txt"
 archivo = open(ruta, 'r')
 lineas = ''
@@ -11,7 +13,7 @@ print(lineas)
 #------------------------------------------------------------------------------
 from Operaciones import OPERADORES
 
-
+ope = OPERADORES()
 
 class Analizador:
 
@@ -55,7 +57,7 @@ class Analizador:
                 else: 
                     #print('ERROR1')     # ERROR de entrada o caracter no reconocido 
                     return False    
-            print(f'**************** ENCONTRE -- {token_tmp}   *******************')
+            #print(f'**************** ENCONTRE -- {token_tmp}   *******************')
             return True
 
         except:
@@ -199,8 +201,7 @@ class Analizador:
                       # REALIZAR LA OPERACION ARITMETICA Y DEVOLVER UN SOLO VALOR
                       print("\t*****OPERACION ARITMETICA*****")
                       print('\t',operador ,'(',hijo_izquierdo ,')' )
-                      print('\t*******************************\n')
-                      ope = OPERADORES(operador,1)
+                      print('\t*******************************\n')                      
                       result = ope._CorroborarOperadorV1(operador, int(hijo_izquierdo))
                       print( result)
                       #a[1]= result # Este lo agregue yo 
@@ -229,7 +230,9 @@ class Analizador:
                         print("\t*****OPERACION ARITMETICA*****")
                         print('\t',hijo_izquierdo , operador, hijo_derecho)
                         print('\t*******************************\n')
-                        op = hijo_izquierdo + operador + hijo_derecho
+                        resultado = ope._CorroborarOperadorV2(operador,float(hijo_izquierdo),float(hijo_derecho))
+                        op = resultado
+                        #op = hijo_izquierdo + operador + hijo_derecho
                         return [estado_sig, op]  
 
             # S13 → S2 S14
@@ -247,7 +250,8 @@ class Analizador:
                 print("\t*****OPERACION ARITMETICA*****")
                 print('\t',hijo_izquierdo , operador, hijo_derecho)
                 print('\t*******************************\n')
-                op = hijo_izquierdo + operador + hijo_derecho
+                resultado = ope._CorroborarOperadorV2(operador,float(hijo_izquierdo),float(hijo_derecho))
+                op = resultado
                 return [estado_sig, op]  
 
 
@@ -285,7 +289,7 @@ class Analizador:
             # S2 "Operacion "S3
             elif estado_actual == 'S2':
                 if self.lineas[self.pos] != " ":
-                     print("Lineas Ver "+str(self.lineas))
+                     #print("Lineas Ver "+str(self.lineas))
                      a = self._operaciones('S15')
                      estado_actual = a[0]
                      print("\t*****RESULTADO*****")

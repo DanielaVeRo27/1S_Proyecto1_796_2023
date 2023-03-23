@@ -8,24 +8,40 @@ class OPERADORES:
         self.Resultado = 0
         pass
     
-    def _CorroborarOperador(self, Valor1, Valor2):        
-        if self.Hijos == 1:
-            self._CorroborarOperadorV1(self.Operador, self.Valor1)
+    
     def _CorroborarOperadorV1 (self, _operador, _num):
         if _operador == '"Seno"':
             print("Seno1: " +str(_num))
-            self.Resultado = math.sin(_num)
+            self.Resultado = math.sin(math.radians( _num))
+            
         elif _operador == '"Coseno"':
             print("Coseno 1", str(_num))
+            self.Resultado = math.cos(math.radians(_num))
         elif _operador == '"Tangente"':
             print("Tangente 1", str(_num))
-            pass 
+            self.Resultado = math.tan(math.radians(_num))
+        elif _operador == '"Inverso"':
+            self.Resultado = 1/_num
         return self.Resultado
-def _CorroborarOperador2(self, _operador, _num1, _num2 ):
+    def _CorroborarOperadorV2(self, _operador, _num1, _num2 ):
 
-    if _operador == "Suma":
-
-        pass
+        if _operador == '"Suma"':
+            self.Resultado =  _num1+_num2
+        elif _operador == '"Resta"':
+            self.Resultado = _num1-_num2
+        elif _operador == '"Multiplicacion"':
+            self.Resultado = _num1 * _num2
+        elif _operador  == '"Division"':
+            self.Resultado = _num1/_num2
+        elif _operador == '"Potencia"':
+            self.Resultado = _num1**_num2
+        elif _operador == '"Raiz"':
+            self.Resultado == _num1**(1/_num2)
+        elif _operador == '"Mod"':
+            self.Resultado == _num1 % _num2
+        elif _operador == '"Seno"':
+            self._CorroborarOperadorV1(_operador,_num1)
+        return self.Resultado
 
 
 
