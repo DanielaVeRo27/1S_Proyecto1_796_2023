@@ -1,9 +1,10 @@
 from tkinter import *
 import tkinter as tk
-from tkinter import ttk     # Ver si realmente se usa esta libreria 
-
+from tkinter import ttk     # Ver si realmente se usa esta libreria
+from tkinter import filedialog 
+#from Analizador import AnalizadorT
 RutaAreaText =""
-
+#Analisis = AnalizadorT()
 VentanaP = tk.Tk()
 VentanaP.title("PROYECTO 1 (Scanner)")
 VentanaP.geometry("745x478")
@@ -18,16 +19,57 @@ texto.config(padx=2, pady=3, bd=0, font=("Consolas", 12),background="thistle")
 texto.pack(fill="both", expand=1)
 
 def Nuevo():
+    global mensaje
+    mensaje.set("Nuevo Fichero")
+    texto.delete(1.0, "end")
     pass
 def Abrir():
+    global RutaAreaText
+    VentanaP.configure(background="SlateGray1")    
+    RutaAreaText   = filedialog.askopenfilename(initialdir='.', 
+        filetype=(("ficheros de texto","*.txt"),),                      # solo se miran archivos del tipo txt
+        title="Abrir Fichero de texto") 
+    
+    if RutaAreaText !="":
+        fichero = open(RutaAreaText, 'r')
+        contenido= fichero.read()
+        texto.delete(1.0,'end')
+        texto.insert("insert", contenido)
+        fichero.close()
+        VentanaP.title(RutaAreaText + "- Mi editor")
+    print(RutaAreaText)
+    texto.insert(0,RutaAreaText)
+    
     pass
 def Guardar():
-    pass
+    mensaje.set("Guardar Archivo")
+    if RutaAreaText != "":
+        Contenido = texto.get(1.0, 'end-1c') # end-1c → es para que no me agregue una linea 
+        fichero = open(RutaAreaText, 'w+')
+        fichero.write(Contenido)
+        fichero.close()
+        mensaje.set("Fichero guardado correctamente")
+    else:
+        Guardar_Como()
 def Guardar_Como():
-    pass
+    global RutaAreaText
+    mensaje.set("Guardar fichero como")
+    fichero = filedialog.asksaveasfile(title='Guardar archico como ', mode='w', defaultextension=".txt")
+    if fichero is not None:
+        RutaAreaText = fichero.name
+        Contenido = texto.get(1.0,'end-1c')
+        fichero = open(RutaAreaText, 'w+')
+        fichero.write(Contenido)
+        fichero.close ()
+        mensaje.set("Fichero guardado correctamente")
+    else :
+        mensaje.set("Error no se guardo")
+        RutaAreaText=""
 def Analizar():
-    pass
+    mensaje.set("Analizar Fichero ")
+    #Analisis.compilar(RutaAreaText)
 def Errores():
+    mensaje.set("Buscando errores en el fichero")
     pass
 
 ArchivoOpc  = Menu(MenuOpc, tearoff=0)
