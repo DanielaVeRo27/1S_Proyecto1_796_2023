@@ -1,0 +1,52 @@
+digraph "Probando el texto" {
+	node [shape=box]
+	node [shape=box]
+	node [shape=box style=filled]
+	node [shape=record]
+	"\"Suma\"0padre1" [label="{\"Suma\"|{10.0}}" fillcolor=" Red"]
+	"6.5-0" [label=6.5]
+	"3.5-0" [label=3.5]
+	"\"Suma\"0padre1" -> "6.5-0"
+	"\"Suma\"0padre1" -> "3.5-0"
+	"\"Resta\"1padre1" [label="{\"Resta\"|{30.0}}" fillcolor=" Red"]
+	"60.0-1" [label=60.0]
+	"30.0-1" [label=30.0]
+	"\"Resta\"1padre1" -> "60.0-1"
+	"\"Resta\"1padre1" -> "30.0-1"
+	"\"Resta\"2padre1" [label="{\"Resta\"|{20.0}}" fillcolor=" Red"]
+	"60.0-2" [label=60.0]
+	"40.0-2" [label=40.0]
+	"\"Resta\"2padre1" -> "60.0-2"
+	"\"Resta\"2padre1" -> "40.0-2"
+	"\"Division\"3padre1" [label="{\"Division\"|{3.0}}" fillcolor=" Red"]
+	"60.0-3" [label=60.0]
+	"20.0-3" [label=20.0]
+	"\"Division\"3padre1" -> "60.0-3"
+	"\"Division\"3padre1" -> "20.0-3"
+	"\"Inverso\"4hijo21" [label="{\"Inverso\" + 0.1111111111111111|{0.1111111111111111}}" fillcolor=" Red"]
+	"9-4" [label=9]
+	"9-4" [label=9]
+	"\"Inverso\"4hijo21" -> "9-4"
+	"\"Potencia\"5hijo" [label="{\"Potencia\"|{1.080059738892306}}" fillcolor=" Red"]
+	"\"Inverso\"4hijo21" [label="\"Inverso\" + 0.1111111111111111"]
+	0.1111111111111111 [label=0.1111111111111111]
+	"\"Potencia\"5hijo" -> 0.1111111111111111
+	"\"Potencia\"5hijo" -> "\"Inverso\"4hijo21"
+	"\"Multiplicacion\"5hijo1" [label="{\"Multiplicacion\" + 2.160119477784612|{2.160119477784612}}" fillcolor=" Red"]
+	"1.080059738892306-5" [label=1.080059738892306]
+	"2.0-5" [label=2.0]
+	"\"Multiplicacion\"5hijo1" -> "1.080059738892306-5"
+	"\"Multiplicacion\"5hijo1" -> "2.0-5"
+	"\"Seno\"6hijo21" [label="{\"Seno\" + 1.0|{1.0}}" fillcolor=" Red"]
+	"90-6" [label=90]
+	"90-6" [label=90]
+	"\"Seno\"6hijo21" -> "90-6"
+	"\"Suma\"7padre1" [label="{\"Suma\"|{6.32}}" fillcolor=" Red"]
+	"\"Seno\"6hijo21" [label="\"Seno\" + 1.0"]
+	"5.32-7" [label=5.32]
+	"\"Suma\"7padre1" -> "\"Seno\"6hijo21"
+	"\"Suma\"7padre1" -> "5.32-7"
+	node [shape=box]
+	node [fillcolor="\"Pink\"" shape=box style=filled]
+	node [shape=record]
+}

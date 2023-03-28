@@ -1,0 +1,100 @@
+{     
+   {        No.:1
+       Descripcion-Token:{
+           Lexema:*
+           Fila:0
+           Columna:4
+       }
+    },
+   {        No.:2
+       Descripcion-Token:{
+           Lexema:?
+           Fila:1
+           Columna:8
+       }
+    },
+   {        No.:3
+       Descripcion-Token:{
+           Lexema:?
+           Fila:1
+           Columna:8
+       }
+    },
+   {        No.:4
+       Descripcion-Token:{
+           Lexema:$
+           Fila:2
+           Columna:18
+       }
+    },
+   {        No.:5
+       Descripcion-Token:{
+           Lexema:$
+           Fila:2
+           Columna:18
+       }
+    },
+   {        No.:6
+       Descripcion-Token:{
+           Lexema:#
+           Fila:6
+           Columna:95
+       }
+    },
+   {        No.:7
+       Descripcion-Token:{
+           Lexema:#
+           Fila:6
+           Columna:95
+       }
+    },
+   {        No.:8
+       Descripcion-Token:{
+           Lexema:+
+           Fila:25
+           Columna:546
+       }
+    },
+   {        No.:9
+       Descripcion-Token:{
+           Lexema:}
+           Fila:26
+           Columna:552
+       }
+    },
+   {        No.:10
+       Descripcion-Token:{
+           Lexema:}
+           Fila:26
+           Columna:552
+       }
+    },
+   {        No.:11
+       Descripcion-Token:{
+           Lexema:,
+           Fila:26
+           Columna:553
+       }
+    },
+   {        No.:12
+       Descripcion-Token:{
+           Lexema:,
+           Fila:26
+           Columna:553
+       }
+    },
+   {        No.:13
+       Descripcion-Token:{
+           Lexema:{
+           Fila:27
+           Columna:559
+       }
+    },
+   {        No.:14
+       Descripcion-Token:{
+           Lexema:{
+           Fila:27
+           Columna:559
+       }
+    },
+}

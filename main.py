@@ -2,15 +2,19 @@ from tkinter import *
 import tkinter as tk
 from tkinter import ttk     # Ver si realmente se usa esta libreria
 from tkinter import filedialog 
-#from Analizador import AnalizadorT
+import webbrowser as wb
+from Analizador2 import Analizador
+from Graficador import Grafica
+
 RutaAreaText =""
-#Analisis = AnalizadorT()
 VentanaP = tk.Tk()
 VentanaP.title("PROYECTO 1 (Scanner)")
 VentanaP.geometry("745x478")
 VentanaP.configure(background="MistyRose2")
 
 MenuOpc = Menu(VentanaP)
+
+
 VentanaP.config(menu=MenuOpc)
 # Caja de texto Central 
 texto = Text(VentanaP)
@@ -66,6 +70,16 @@ def Guardar_Como():
         mensaje.set("Error no se guardo")
         RutaAreaText=""
 def Analizar():
+    archivo = open(RutaAreaText, 'r')
+    lineas = ''
+    for i in archivo.readlines():
+        lineas += i
+    
+    a = Analizador(lineas)
+    a._compile()
+    Grafica()
+
+
     mensaje.set("Analizar Fichero ")
     #Analisis.compilar(RutaAreaText)
 def Errores():
@@ -83,11 +97,14 @@ ArchivoOpc.add_separator()
 ArchivoOpc.add_command(label="SALIR", command=VentanaP.quit)
 
 def M_Tecnico():
+    print("Manual Usuario")
+    wb.open(r'.\Documentacion\ManualTecnico.pdf')
     pass
 def M_Usuario():
+    wb.open(r'.\Documentacion\Manualusuario.pdf')
     pass
 def T_Ayuda():
-    pass
+    wb.open(r'.\Documentacion\TemasAyuda.pdf')
 
 HelpOpc = Menu(MenuOpc, tearoff=0)
 HelpOpc.add_command(label="Manual de Usuario", command=M_Usuario)

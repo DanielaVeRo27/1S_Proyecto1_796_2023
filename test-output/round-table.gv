@@ -1,0 +1,73 @@
+digraph "Probando el texto" {
+	node [shape=circle]
+	node [shape=circle]
+	node [fillcolor=Yellow shape=circle style=filled]
+	node [shape=record]
+	"\"Resta\"0padre1" [label="{\"Resta\"|{3.0}}"]
+	"6.5-0" [label=6.5]
+	"3.5-0" [label=3.5]
+	"\"Resta\"0padre1" -> "6.5-0"
+	"\"Resta\"0padre1" -> "3.5-0"
+	"\"Raiz\"1hijo1" [label="{\"Raiz\" + 3.0|{3.0}}"]
+	"9.0-1" [label=9.0]
+	"2.0-1" [label=2.0]
+	"\"Raiz\"1hijo1" -> "9.0-1"
+	"\"Raiz\"1hijo1" -> "2.0-1"
+	"\"Potencia\"2padre" [label="{\"Potencia\"|{8.0}}"]
+	"\"Raiz\"1hijo1" [label="\"Raiz\" + 3.0"]
+	"\"Raiz\"1hijo1" [label="\"Raiz\" + 3.0"]
+	"\"Potencia\"2padre" -> "\"Raiz\"1hijo1"
+	"\"Potencia\"2padre" -> "\"Raiz\"1hijo1"
+	"\"Raiz\"2hijo1" [label="{\"Raiz\" + 3.0|{3.0}}"]
+	"9.0-2" [label=9.0]
+	"2.0-2" [label=2.0]
+	"\"Raiz\"2hijo1" -> "9.0-2"
+	"\"Raiz\"2hijo1" -> "2.0-2"
+	"\"Potencia\"3padre" [label="{\"Potencia\"|{8.0}}"]
+	2.0 [label=2.0]
+	"\"Raiz\"2hijo1" [label="\"Raiz\" + 3.0"]
+	"\"Potencia\"3padre" -> "\"Raiz\"2hijo1"
+	"\"Potencia\"3padre" -> 2.0
+	"\"Multiplicacion\"3padre" [label="{\"Multiplicacion\"|{64.0}}"]
+	8.0 [label=8.0]
+	8.0 [label=8.0]
+	"\"Multiplicacion\"3padre" -> 8.0
+	"\"Multiplicacion\"3padre" -> 8.0
+	"\"Seno\"3hijo21" [label="{\"Seno\" + 1.0|{1.0}}"]
+	"90-3" [label=90]
+	"90-3" [label=90]
+	"\"Seno\"3hijo21" -> "90-3"
+	"\"Suma\"4padre1" [label="{\"Suma\"|{6.32}}"]
+	"\"Seno\"3hijo21" [label="\"Seno\" + 1.0"]
+	"5.32-4" [label=5.32]
+	"\"Suma\"4padre1" -> "\"Seno\"3hijo21"
+	"\"Suma\"4padre1" -> "5.32-4"
+	"\"Division\"5hijo1" [label="{\"Division\" + 2.0|{2.0}}"]
+	"10.0-5" [label=10.0]
+	"5.0-5" [label=5.0]
+	"\"Division\"5hijo1" -> "10.0-5"
+	"\"Division\"5hijo1" -> "5.0-5"
+	"\"Division\"6padre" [label="{\"Division\"|{250.0}}"]
+	"\"Division\"5hijo1" [label="\"Division\" + 2.0"]
+	"\"Division\"5hijo1" [label="\"Division\" + 2.0"]
+	"\"Division\"6padre" -> "\"Division\"5hijo1"
+	"\"Division\"6padre" -> "\"Division\"5hijo1"
+	"\"Multiplicacion\"6hijo1" [label="{\"Multiplicacion\" + 15.0|{15.0}}"]
+	"3.0-6" [label=3.0]
+	"5.0-6" [label=5.0]
+	"\"Multiplicacion\"6hijo1" -> "3.0-6"
+	"\"Multiplicacion\"6hijo1" -> "5.0-6"
+	"\"Multiplicacion\"7padre" [label="{\"Multiplicacion\"|{150.0}}"]
+	10.0 [label=10.0]
+	"\"Multiplicacion\"6hijo1" [label="\"Multiplicacion\" + 15.0"]
+	"\"Multiplicacion\"7padre" -> "\"Multiplicacion\"6hijo1"
+	"\"Multiplicacion\"7padre" -> 10.0
+	"\"Resta\"7padre" [label="{\"Resta\"|{100.0}}"]
+	250.0 [label=250.0]
+	150.0 [label=150.0]
+	"\"Resta\"7padre" -> 150.0
+	"\"Resta\"7padre" -> 250.0
+	node [shape=circle]
+	node [fillcolor=Yellow shape=box style=filled]
+	node [shape=record]
+}

@@ -1,5 +1,4 @@
-ruta = "C:/Users/Luisa/Documents/Proyectos 2023/DocPrueba.txt"
-archivo = open(ruta, 'r')
+archivo = open('entrada.txt', 'r')
 lineas = ''
 for i in archivo.readlines():
     lineas += i
@@ -190,7 +189,7 @@ class Analizador:
 
             # S7 -> S1 S8
             elif estado_actual == 'S7':
-                a = self._operaciones('S8') # esto agregar cada que inicia una llave 
+                a = self._operaciones('S8')
                 estado_actual = a[0]
                 hijo_izquierdo = a[1]
 
@@ -326,46 +325,13 @@ class Analizador:
 
     def guardarErrores(self, token, fila, columna):
         self.ListaErrores.append({"token":token, "fila": fila, "columna":columna})
-
-
-a = Analizador(lineas)
-a._compile()
-
-
-
-"""class AnalizadorT:
-    def __init__(self) :
-        pass
-    def compilar(self,ruta ):
-
-        nueva_linea = ''
-
-
-
-        archivo = open(ruta)
-        lineas = ''
-        #contenido = archivo.readline()
-        #archivo.close()
-        for i in archivo:
-            print(str(i))
-            i = i.replace(' ', '')
-            if i == '\n':
-                print("Entrando")
-                i = i.replace('\n','')            
-                pass 
-
-            lineas+=i"""
-            
-            
-
-
-# --------------------------------------------------------------------------------------------------------------------
-
-"""  print (lineas)
-cont_fila = 0
-for m in lineas:
-    
-    if m == '\n':
-        m = m.replace('\n','')
-        cont_fila+=1
-    print(str(m)+str(cont_fila))"""
+    def Reporte(self):
+        cont = 0
+        self.ListaErrores
+        """Report = open("ERRORESA.json",'w')
+        Report.write("{")"""
+        for i in self.ListaErrores:
+            print(self.ListaErrores)
+        
+    def imprimiErrores(self):
+        len(self.ListaErrores)
